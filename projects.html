@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+<body class="project-body">
+    
+    <nav id="desktop-nav">
+        <div class="logo"> Ahmet Burak Suslu </div>
+        <div>
+            <ul class="nav-links">
+            <li><a href="./index.html#about">About</a></li>    
+            <li><a href="./index.html#experience">Experience</a></li>    
+            <li><a href="./index.html#projects">Projects</a></li>    
+            <li><a href="./index.html#contact">Contact</a></li>    
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo"> Ahmet Burak Suslu </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="togglemenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+            <div class="menu-links">
+             <li><a href="./index.html#about"onclick="togglemenu()">About</a></li>    
+             <li><a href="./index.html#experience"onclick="togglemenu()">Experience</a></li>    
+             <li><a href="./index.html#projects"onclick="togglemenu()">Projects</a></li>    
+             <li><a href="./index.html#contact"onclick="togglemenu()">Contact</a></li>   
+            </div>
+        </div>
+       
+    </nav>
+    <div class="go-back">
+        <a href="./index.html#projects" class="go-back-ancor logo"> <div class="logo">  Go Back </div> </a>
+    </div>
+
+        
+    <div class="lable-project">
+      <h1 class="lable-project-title ">Projects</h1>
+      <p class="lable-project-subtitle">Success is a project that's always under construction. </p>
+    </div>
+  
+   
+    <div class="project-1">
+      <span class="heading">(SIEM) Project</span>
+      <h2 class="heading-secondary">Microsoft Azure</h2>
+      <section class="section-testimonials">
+       
+        <div class="testimonials-container">
+          
+          <div class="project-paragraph">
+
+            <p><b>In this project, I wanted to learn the basics of Security Information and Event Management (SIEM) in Microsoft Azure.</b></p>
+            <p><b>I will list the basics of what was done in this project to give you all an understanding of what actually went through
+              this project my struggles and things that I found interesting.</b></p>
+            <p>1. At first I had to build up a virtual machine (VM) that would be vulnerable to any outside threats so I could see the
+              attacks that is being made to the VM. for this to happen I want to the outside firewall of the VM and turned it off I
+              also went and turned off the Microsoft firewall which made it very vulnerable to any outside threat. I also used a
+              PowerShell to extract the IP addresses of the attacks and with the help of a 3rd party API, I was able to get the
+              Latitude and longitude of the attacks.</p>
+            <p>2. next up I created a log repository in Azure which was done using the Azures Log Analytics Workspace. The log
+              analytics pretty much got the data that is being transmitted through the VM so we could have data that stores all the
+              attacks. this part was a little bit tricky to make since I had to handle a lot of variables and it could get a little
+              bit complicated but in the end, I was able to get it sorted.</p>
+            <p>3. Lastly I used Azure Sentinel which is Microsofts cloud SIEM. the Sentinel's biggest job is to use the logs that are
+              stored in the log analytics to create a map of the attacks that are done to the vulnerable VM.</p>
+            <p>In the end, this is what It looked like unfortunately, I didn't keep the VM running long enough to have more attacks
+              coming in which is why my map looks mostly empty or people are too scared to attack me.</p>
+
+
+
+
+          </div>
+        </div>
+        <div class="gallery-new">
+          <div id="pic-1-container">
+            <img id="pic-1" src="./Assets/Project 1/ss1.png" />
+            <div class="pic-overlay" onclick="goToPrevImage()">Click for the previous image</div>
+          </div>
+          <div id="pic-2-container">
+            <img id="pic-2" src="./Assets/Project 1/ss2.png" onclick="showImage()"/>
+          </div>
+          <div id="pic-3-container">
+            <img id="pic-3" src="./Assets/Project 1/ss3.png" />
+            <div class="pic-overlay" onclick="goToNextImage()">Click for the next image</div>
+          </div>
+        </div>
+      </section>
+      <div id="image-viewer" onclick="closeImage()" style="display: none;">
+      <img id="image-viewer-pic" src="./Assets/Project 1/ss2.png" />
+      </div>
+    </div>
+
+    <div class="project-2">
+      <span class="heading">Web Scrapper</span>
+      <h2 class="heading-secondary">Python / Excel </h2>
+      <section class="section-testimonials">
+    
+        <div class="testimonials-container">
+    
+          <div class="project-paragraph">
+    
+            <p> <b>
+              In this project, I wanted to learn how to web 
+              scrape using <b>BeutifullSoup</b> and import the data to Excel.
+            </b></p>
+            <p><b>
+              This project was designed to get top 250 movies of all time and list their Rank, Name, Year, and Rating.
+               I will also list my struggles and things that I found interesting in this project.
+            </b></p>
+            <p>
+              1. At first I had to <b>import requests and BeutifullSoup</b>, requests help me make requests to the chosen website which in our case is (IMDB.com) 
+              and BeutifullSoup helps us retrive the needed HTML 
+              contents of the website by using filters.
+            </p>
+            <p>
+              2. next up I coded a try and except statements to first figure out wether the website link is giving code 200 or 404.
+              if the code was good BeutifullSoup would get the HTML contents of the website which by using 
+              <b>"Soup.find()"</b> we can find the needed sections, Divs, and other needed tags.
+
+            </p>
+            <p>3. one of the things I struggled the most was that IMDB website did not let me have a session using Requests.
+               At first I couldnt figure out what was wrong after doing a reaserch for some time we can use headers to show as we are a human which after
+               I did it let me get the parsed HTML. 
+
+            </p>
+            <p>
+              After getting the needed Rank, Name, Year, and Rating I imported <b>openpyxl</b> whcih let me create an excel sheet and import each data into an excel file.
+              Later on i also added a filter whch let you chose a movie by the year.
+            </p>
+    
+    
+    
+    
+          </div>
+        </div>
+        <div class="gallery-new2">
+          <img src="./Assets/python.png" alt="" class="project2-img">
+        </div>
+        
+      </section>
+      <div class="btn-container project2-btn-container">
+        <button class="btn btn-color-2 btn-project2" onclick="location.href='https://github.com/absuslu11/IMDBScrapper'">
+          Check It out on Github
+        </button>
+      </div>
+      
+      
+    </div>
+    
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>coppyright &#169; 2023 Ahmet Burak Suslu. All Rights Reserved.</p>
+    </footer>
+
+
+</body>
+</html>
